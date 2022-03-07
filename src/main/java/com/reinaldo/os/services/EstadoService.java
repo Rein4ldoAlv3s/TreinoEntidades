@@ -1,5 +1,6 @@
 package com.reinaldo.os.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,13 @@ public class EstadoService {
 	@Autowired
 	private EstadoRepository repository;
 	
-	public Estado listar(Integer id) {
+	public Estado listarUm(Integer id) {
 		Optional<Estado> obj = repository.findById(id);
 		return obj.orElse(null);
 	}
+	
+	public List<Estado> listarTodos(){
+		return repository.findAll();
+	}
+	
 }

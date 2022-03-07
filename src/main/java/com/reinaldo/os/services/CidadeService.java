@@ -21,12 +21,8 @@ public class CidadeService {
 		return obj.orElse(null);
 	}
 	
-	public List<Cidade> listarTodos() {
+	public List<Cidade> listarTodos(){
 		return repository.findAll();
 	}
 	
-	
-	private static Cidade fromDTO(CidadeDTO obj) {
-		return new Cidade(obj.getId(), obj.getNome(), null);
-	}
 }

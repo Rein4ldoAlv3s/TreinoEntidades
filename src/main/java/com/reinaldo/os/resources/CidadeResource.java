@@ -29,10 +29,10 @@ public class CidadeResource {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<CidadeDTO>> listar(){
+	public ResponseEntity<List<CidadeDTO>> listarTodos(){
 		List<Cidade> obj = service.listarTodos();
-		List<CidadeDTO> listDto = obj.stream().map(cid -> new CidadeDTO(cid)).collect(Collectors.toList());   
-		return ResponseEntity.ok().body(listDto);
+	    List<CidadeDTO> listDto = obj.stream().map(cidDTO -> new CidadeDTO(cidDTO)).collect(Collectors.toList());
+	    return ResponseEntity.ok().body(listDto);
 	}
 	
 }
